@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="/static/style/plugins.xsl" ?>
+<plugins>
+    <pyqgis_plugin name="IBUS plugin" version="0.3.3" plugin_id="147">
+        <description><![CDATA[this is description]]></description>
+        <about></about>
+        <version>0.3.3</version>
+        <qgis_minimum_version>2.2</qgis_minimum_version>
+        <qgis_maximum_version>3.0</qgis_maximum_version>
+        <homepage><![CDATA[http://www.facebook.com/ivan.busthomi]]></homepage>
+        <file_name>ComboboxLayer.zip</file_name>
+        <icon>/static/packages/survey.png</icon>
+        <author_name><![CDATA[Ivan Busthomi]]></author_name>
+        <download_url>https://github.com/ivanbusthomi/test_repo/raw/master/ComboboxLayer.zip</download_url>
+        <uploaded_by><![CDATA[ibus]]></uploaded_by>
+        <create_date>2014-06-18T09:43:57.251757</create_date>
+        <update_date>2014-06-18T09:43:57.251757</update_date>
+        <experimental>True</experimental>
+        <deprecated>False</deprecated>
+        <repository><![CDATA[https://github.com/ivanbusthomi/BuGIS]]></repository>
+        <tags><![CDATA[line boundary,delimitiation,equidistance,UNCLOS]]></tags>
+    </pyqgis_plugin>
+</plugins>
