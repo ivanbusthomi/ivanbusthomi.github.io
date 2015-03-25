@@ -1,0 +1,579 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset=utf-8>
+    <!--
+     | Version 10.2
+     | Copyright 2012 Esri
+     |
+     | Licensed under the Apache License, Version 2.0 (the "License");
+     | you may not use this file except in compliance with the License.
+     | You may obtain a copy of the License at
+     |
+     |    http://www.apache.org/licenses/LICENSE-2.0
+     |
+     | Unless required by applicable law or agreed to in writing, software
+     | distributed under the License is distributed on an "AS IS" BASIS,
+     | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     | See the License for the specific language governing permissions and
+     | limitations under the License.
+    -->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Citizen Service Request</title>
+    <link rel="shortcut icon" href="images/logo.ico" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.11/dojox/mobile/themes/iphone/iphone.css" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.11/esri/css/esri.css" />
+    <link href="styles/serviceRequest.css" rel="stylesheet" type="text/css" />
+    <link rel="Stylesheet" id="dynamicStyleSheet" />
+    <script type="text/javascript" src="js/baseMapGallery.js"></script>
+    <link rel="apple-touch-icon" href="images/iphone-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/iphone-icon.png" />
+    <script type="text/javascript">
+            var dojoConfig = {
+                async: false,
+                parseOnLoad: true,
+                mblHideAddressBar: false,
+                packages: [{
+                    name: "js",
+                    location: location.pathname.replace(/\/[^/]+$/, '') + '/js'
+                }]
+            };
+    </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.11/"></script>
+    <script type="text/javascript" src="js/baseMapGallery.js"></script>
+    <script type="text/javascript" src="js/modernizr-2.5.3.js"></script>
+    <script type="text/javascript" src="js/locator.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/homePage.js"></script>
+</head>
+<body onorientationchange="OrientationChanged();">
+
+     <div id="map" style="width: 100%; height: 100%;">
+    </div>
+
+
+    <div id="divUploadDialogContainer" class="divUploadDialogContainer" align="center"
+        style="display: none;">
+        <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle">
+                <td>
+                    <div id="divUploadDialog" class="divUploadDialog">
+                        <table cellpadding="0px" cellspacing="0px" style="width: 95%; height: 95%;">
+                            <tr>
+                                <td style="height: 5px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: White;">
+                                    <span id="spanAddAttachmentText"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 5px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="customButton">
+                                    <button type="button" id="btnAddPhoto" style="width: 100px;" class="customButtonInner">
+                                        Add Photo</button>&nbsp;
+                                    <button type="button" style="width: 100px;" class="customButtonInner" onclick="CloseUploadDialog();">
+                                        Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 5px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divSplashScreenContainer" class="divSplashScreenContainer" style="display: none;">
+        <table style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle">
+                <td>
+                    <div id="divSplashScreenContent" class="divSplashScreenContent">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <div id="divSplashContainer" class="divSplashContainer" style="margin-top: 10px;">
+                                        <div id="divSplashContent" class="divSplashContent">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <div style="width: 75px; margin-top: 7px;" class="customButton" onclick="HideSplashScreenMessage();">
+                                        <div class="customButtonInner">
+                                            <table style="width: 100%; height: 100%;">
+                                                <tr>
+                                                    <td align="center" valign="middle">
+                                                        <center>
+                                                            OK</center>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divLogo" class="divLogo">
+        <table style="width: 100%; height: 100%;" cellpadding="2px" cellspacing="2px">
+            <tr align="left" style="margin-top: 0px">
+                <td valign="top">
+                    <img id="imgApp" class="imgApp" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="divApplicationHeader" align="right">
+        <table cellpadding="0px" cellspacing="0px" class="tableHeader">
+            <tr>
+                <td id="lblAppName" class="lblAppName" align="left">
+                </td>
+                <td align="right">
+                    <table>
+                        <tr>
+                            <td align="center" id="Td1" class="tdHeader">
+                                <img alt="Settings" src="images/locate.png" class="imgOptions" title="Search" onclick="ShowLocateContainer();"
+                                    style="cursor: pointer" />
+                            </td>
+                            <td align="center" id="tdGeolocation" class="tdHeader">
+                                <img alt="Settings" src="images/gps.png" class="imgOptions" title="Locate" onclick="ShowMyLocation();"
+                                    style="cursor: pointer" />
+                            </td>
+                            <td align="center" id="tdBaseMap">
+                            </td>
+                            <td align="center" class="tdHeader">
+                                <img src="images/imgsocialmedia.png" class="imgOptions" title="Share" onclick="ShareLink(true);"
+                                    style="cursor: pointer" />
+                            </td>
+                            <td align="center" id="help" class="tdHeader">
+                                <img src="images/help.png" title="Help" id="imgHelp" class="imgOptions" style="cursor: pointer" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divAddressContainer" align="center" class="divAddressContainer hideContainerHeight"
+        style="display: none">
+        <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle">
+                <td>
+                    <div id="divAddressContent" class="divAddressContent hideContainerHeight">
+                        <table class="tblHeader" style="width: 100%;">
+                            <tr style="height: 30px;" align="center" valign="top">
+                                <td class="tdHeader" align="left" valign="middle" style="padding-left: 8px;">
+                                    Search Address
+                                </td>
+                                <td style="width: 10%;" align="right">
+                                    <img src="images/close.png" class="imgOptions" title="Close" style="cursor: pointer;
+                                        padding: 0px" onclick="HideAddressContainer();" />
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="divAddressResultContainer" style="margin: 0px 0px 0px 5px;">
+                            <table style="color: #fff; width: 100%;">
+                                <tr>
+                                    <td>
+                                        <table style="width: 100%; margin: 5px 5px 5px -2px;">
+                                            <tr>
+                                                <td id="tdSearchAddress" class="tdSearchByAddress" onclick="ShowAddressSearchView();">
+                                                </td>
+                                                <td id="tdSearchRequest" class="tdSearchByUnSelectedRequest" onclick="ShowRequestSearchView();">
+                                                </td>
+                                                <td id="tdImglocate">
+                                                    <img id="imgLocate" src="images/locate.png" class="imgLocate" title="Locate" onclick="LocateAddress();" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div id="divAddressPlaceHolder" class="divAddressPlaceHolder" align="left">
+                                            <input type="text" id="txtAddress" class="txtAddress" onfocus="if(this.setSelectionRange)this.setSelectionRange(this.value.length, this.value.length);" />
+                                        </div>
+                                        <div id="divAddressList" class="divAddressList">
+                                            <div id="divAddressScrollContainer" class="divAddressScrollContainer" align="left">
+                                                <div id="divAddressScrollContent" class="divAddressScrollContent" style="height: 123px">
+                                                    <table id="tblAddressResults" cellpadding="0" cellspacing="2" style="width: 100%;">
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table style="height: 100%; width: 100%;">
+                                            <tr>
+                                                <td align="center">
+                                                    <img id="imgSearchLoader" src="images/loader.gif" class="imgSearchLoader" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divLayerContainer" class="divLayerContainer hideContainerHeight">
+        <div id="divLayerHolder" class="divLayerHolder">
+            <div id="divLayerContentHolder" class="divLayerContentHolder">
+                <div id="layerList">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divAppContainer" class="divAppContainer hideContainerHeight">
+        <div id="divAppHolder" class="divAppHolder">
+            <div id="divAppContent">
+                <table cellpadding="0px" cellspacing="0px">
+                    <tr>
+                        <td>
+                            <table cellpadding="2px" cellspacing="2px">
+                                <tr>
+                                    <td align="center" colspan="3" style="color: white;">
+                                        Share this map
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 30px;" align="center" id="tdFacebook">
+                                        <img title="Facebook" class="imgShare" id="imgFacebook" src="images/img_facebook.png"
+                                            onclick="Share('facebook')" />
+                                    </td>
+                                    <td style="width: 30px;" align="center" id="tdTwitter">
+                                        <img title="Twitter" class="imgShare" id="imgTwitter" src="images/img_twitter.png"
+                                            onclick="Share('twitter')" />
+                                    </td>
+                                    <td style="width: 30px;" align="center" id="tdMail">
+                                        <img title="Email" class="imgShare" id="imgMail" src="images/img_email.png" onclick="Share('email')" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="divCreateRequest" align="center" class="divCreateRequest opacityHideAnimation">
+        <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle">
+                <td>
+                    <div id="divCreateRequestContainer" class="hideContainer divCreateRequestContainer">
+                        <table cellpadding="0px" cellspacing="0px" class="tblHeader" style="padding: 1px;
+                            width: 100%;">
+                            <tr style="height: 30px;" align="center" valign="top">
+                                <td id="createPopUpTitle" class="tdHeader" align="left" valign="middle" style="padding-left: 7px; font-weight: bolder;
+                                    width: 90%">
+                                    Service Request Details
+                                </td>
+                                <td align="right" style="width: 10%;">
+                                    <img src="images/close.png" id="imgClose" class="imgOptions" title="Close" style="cursor: pointer;
+                                        padding-right: 1px;" onclick="HideCreateRequestContainer();" />
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height: 2px;">
+                        </div>
+                        <div align="center" id="divCreateRequestContent" class="divCreateRequestContent">
+                            <div id="divCreateRequestScrollContent" class="divCreateRequestScrollContent" style="left: 0px;
+                                border-bottom-width: 2px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px">
+                                <table id="submitTable" class="submitTable" style="color: #fff;" cellspacing="0px;">
+                                    <tr class="trRowStyle">
+                                        <td id="createPopUpType"style="padding-top: 2px;" valign="middle" align="left">
+                                            Type:
+                                        </td>
+                                        <td valign="middle" align="left">
+                                            <div class="divDropdown" id="divDropdown">
+                                                <table cellpadding="0px" cellspacing="0px" style="width: 100%;">
+                                                    <tr class="divDropDownContainer" id="divDropDownContainer">
+                                                        <td style="height: 25px">
+                                                            <input type="text" id="txtSelectedRequest" class="txtSelectedRequest" readonly="readonly"
+                                                                onclick="ToggleRequestTypesList();" />
+                                                        </td>
+                                                        <td style="width: 25px; height: 25px;">
+                                                            <img src="images/dropdown.png" id="imgDropdownCarot" state="minimized" class="imgDropdownCarot"
+                                                                onclick="ToggleRequestTypesList();" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div id="divRequestTypes" class="divRequestTypes">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="trTextAreaRowStyle">
+                                        <td id="createPopUpComments" style="padding-top: 2px;" valign="top" align="left">
+                                            Comment:
+                                        </td>
+                                        <td align="left">
+                                            <textarea placeholder="Enter comment" valign="middle" maxlength="250" id="txtDescription"
+                                                class="txtDescription" onkeypress="if(dojo.isIE){return ImposeMaxLength(this, 249);}else{return ImposeMaxLength(this, 250);}"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr class="trRowStyle" id="trRowStyle">
+                                        <td id="createPopUpName" style="padding-top: 2px;" valign="middle" align="left">
+                                            Name:
+                                        </td>
+                                        <td align="left">
+                                            <input placeholder="Enter name" valign="middle" maxlength="150" type="text" id="txtName"
+                                                class="txtBox" />
+                                        </td>
+                                    </tr>
+                                    <tr class="trRowStyle">
+                                        <td id="createPopUpPhone" style="padding-top: 2px;" valign="middle" align="left">
+                                            Phone:
+                                        </td>
+                                        <td align="left">
+                                            <input placeholder="Enter phone number" valign="middle" type="tel" id="txtPhone"
+                                                class="txtBox" />
+                                        </td>
+                                    </tr>
+                                    <tr class="trRowStyle">
+                                        <td id="createPopUpEmail" style="padding-top: 2px;" valign="middle" align="left">
+                                            Email:
+                                        </td>
+                                        <td align="left">
+                                            <input placeholder="Enter email address" valign="middle" type="text" id="txtMail"
+                                                class="txtBox" />
+                                        </td>
+                                    </tr>
+                                    <tr id="trFileUpload" class="trRowStyle">
+                                        <td id="createPopUpAttach" style="padding-top: 2px;" valign="middle" align="left">
+                                            Attach:
+                                        </td>
+                                        <td align="left" valign="middle">
+                                            <table cellspacing="0" cellpadding="0" style="margin-left: 4px; width: 95%;">
+                                                <tr>
+                                                    <td class="tdAttach">
+                                                        <input id="txtFileName" type="text" class="txtFileName" readonly="readonly" style="margin-left: 0px;
+                                                            width: 100%" />
+                                                    </td>
+                                                    <td class="tdSelect">
+                                                        <div id="divFileSelectComponent" class="fileinputs" title="Select File to Upload">
+                                                            <form id="formFileUplaod">
+                                                            <input id="fileUploadControl" class="filehidden" accept="image/*" capture="camera"
+                                                                onchange="SetFileName(this);" size="25" type="file" name="attachment" />
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="spancreateerror" align="left" style="width: 100%; height: 15px; border: 2px;
+                                vertical-align: top; padding-top: 0px">
+                                <span id="spanServiceErrorMessage" style="color: Yellow; margin-left: 4px; vertical-align: middle;">
+                                </span>
+                            </div>
+                            <div style="height: 2px; width: 100%">
+                            </div>
+                            <div id="submitDiv" class="submitDiv" style="width: 100%; border: 2px;">
+                                <table cellspacing="0px" style="width: 100%; margin-bottom: 10px">
+                                    <tr style="height: 15px;">
+                                        <td colspan="2" align="center" style="padding-right: 10px;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="customButton">
+                                                            <div class="customButtonInner">
+                                                                <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="middle" align="center" style="width: 75px" id="btnSubmit" onclick="SubmitIssueDetails();">
+                                                                                <center>
+                                                                                    Submit</center>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="customButton">
+                                                            <div class="customButtonInner">
+                                                                <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="middle" align="center" style="width: 75px" id="btnCancel" onclick="HideCreateRequestContainer();">
+                                                                                <center>
+                                                                                    Cancel</center>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divInfoContainer" align="center" class="divInfoContainer opacityHideAnimation">
+        <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle">
+                <td>
+                    <div align="left" id="divInfoContent" class="hideContainer divInfoContent">
+                        <table id="tblHeader" class="tblHeader" style="width: 100%; padding: 1px" cellpadding="0px"
+                            cellspacing="0px">
+                            <tr style="height: 30px;" align="center" valign="top">
+                                <td align="left" id="tdLabel" valign="middle" style="padding-left: 7px; width: 98%">
+                                    <span id="tdInfoHeader" class="tdInfoHeader"></span>
+                                </td>
+                                <td id="tdImages">
+                                    <table cellpadding="0px" cellspacing="0px" align="right">
+                                        <tr>
+                                            <td id="tdDirections" align="right">
+                                                <img class="infoOptions" id="imgDirections" onclick="ShowInfoDirectionsView();" />
+                                            </td>
+                                            <td id="tdComments" align="right">
+                                                <img src="images/comments.png" class="infoOptions" title="Comments" id="imgComments"
+                                                    onclick="ShowCommentsView();" />
+                                            </td>
+                                            <td align="right">
+                                                <img src="images/close.png" class="infoOptions" title="Close" style="cursor: pointer;"
+                                                    onclick="HideInfoContainer();" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="divInfoDetails" class="divInfoDetails" style="color: #fff;">
+                            <div id="divInfoDetailsScroll" class="divInfoDetailsScroll">
+                                <table id="tblInfoDetails" cellpadding="0px" cellspacing="0px" style="width: 100%;
+                                    padding-top: 5px; padding-left: 2px">
+                                </table>
+                            </div>
+                        </div>
+                        <div id="divInfoComments" class="divInfoComments" style="color: #fff; display: none;">
+                            <div align="left" id="divCommentsView">
+                                <table cellpadding="0px" cellspacing="0px" style="height: 35px; cursor: pointer;"
+                                    onclick="ShowAddCommentsView();">
+                                    <tr align="left">
+                                        <td style="width: 37px;">
+                                            <img title="" src="images/addcomment.png" class="imgOptions">
+                                        </td>
+                                        <td>
+                                            Add Comment
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="divCommentsList">
+                                <div id="divCommentsContainer" class="divCommentsContainer">
+                                    <div id="divCommentsContent" class="divCommentsContent" style="overflow: hidden">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divAddComment" style="display: none; margin: 2px;">
+                                <div id="divCmtIpContainer" class="divCmtIpContainer">
+                                    <div id="divCmtIpContent" class="divCmtIpContent" style="overflow: hidden; width: 100%">
+                                        <table cellpadding="2px" cellspacing="0px" style="width: 100%;">
+                                            <tr style="height: 20px">
+                                                <td valign="middle" style="width: 20px">
+                                                    Rating
+                                                </td>
+                                                <td align="left">
+                                                    <ul readonly="false" id="commentRating" value="0" numstars="5" style="width: 150px;
+                                                        height: 100%; margin: 0px 0px 0px 0px;" />
+                                                </td>
+                                            </tr>
+                                            <tr valign="top">
+                                                <td align="left" colspan="2">
+                                                    Comment
+                                                </td>
+                                            </tr>
+                                            <tr valign="top">
+                                                <td colspan="2">
+                                                    <textarea placeholder="Enter comment" maxlength="250" class="txtArea" id="txtComments"
+                                                        onkeypress="if(dojo.isIE){return ImposeMaxLength(this, 249);}else{return ImposeMaxLength(this, 250);}"></textarea>
+                                                </td>
+                                            </tr>
+                                            <tr style="height: 25px;">
+                                                <td colspan="2" align="left" style="height: 20px;">
+                                                    <span id="spanCommentError" style="display: none; color: Yellow; margin-top: 3px;
+                                                        word-wrap: break-word;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2">
+                                                    <table style="margin-left: auto; margin-right: auto">
+                                                        <tr>
+                                                            <td>
+                                                                <div style="width: 75px;" class="customButton" id="btnAddComments" onclick="AddRequestComment();">
+                                                                    <div class="customButtonInner">
+                                                                        <table style="width: 100%; height: 100%;">
+                                                                            <tr>
+                                                                                <td align="center" valign="middle">
+                                                                                    Submit
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div style="width: 75px;" class="customButton" onclick="ResetTextArea();">
+                                                                    <div class="customButtonInner">
+                                                                        <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+                                                                            <tr>
+                                                                                <td align="center" valign="middle">
+                                                                                    Cancel
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divLoadingIndicator" class="divLoadingIndicator" style="display: none;">
+        <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle">
+                <td>
+                    <img src="images/loader.gif" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
