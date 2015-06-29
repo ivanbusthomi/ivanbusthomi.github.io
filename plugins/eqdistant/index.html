@@ -1,6 +1,159 @@
+<!DOCTYPE html>
 <html>
-<head></head>
-<body>
-<h1>Hajime</h1>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>eqdistant web page</title>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">        
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        
+        <div id="wrapper" class="active">      
+    
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul id="sidebar_menu" class="sidebar-nav">
+                    <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu <span id="main_icon" class="glyphicon glyphicon-align-justify"></span> </a></li>
+                </ul>
+
+                <ul class="sidebar-nav" id="sidebar">
+                    <li><a href="#home">Home <span class="sub_icon glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="#video">Demo Video <span class="sub_icon glyphicon glyphicon-expand"></span></a></li>
+                    <li><a href="#install">Installation <span class="sub_icon glyphicon glyphicon-save"></span></a></li>
+                    <li><a href="#layer">Layer Selection <span class="sub_icon glyphicon glyphicon-plus"></span></a></li>
+                    <li><a href="#result">Result Type <span class="sub_icon glyphicon glyphicon-tasks"></span></a></li>
+                    <li><a href="#point">Starting Point <span class="sub_icon glyphicon glyphicon-map-marker"></span></a></li>
+                    <li><a href="#intv">Interval Distance <span class="sub_icon glyphicon glyphicon-resize-full"></span></a></li>
+                    <li><a href="#save">Saving Result <span class="sub_icon glyphicon glyphicon-floppy-disk"></span></a></li>
+                    <li><a href="#fop">F.O.P <span class="sub_icon glyphicon glyphicon-exclamation-sign"></span></a></li>
+                </ul>
+            </div>
+
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                
+                <!-- Home -->
+                <div id="home" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>EqDistant Plugin How-To</h1>
+                            <div class="well">
+                                <p class="lead">Welcome to EqDistant Plugin website!</p>
+                                <p>EqDistant Plugin is a plugin to create an equidistance line. Equidistance line is a line which every point of the line is equidistant from the nearest points on input lines. Equidistance line is often used to determine maritime boundary between two states, where the input are the baselines of the states.</p>
+                                <p>Equidistance construction algorithm used by this plugin is based on steps of constructing equidistance line in Technical Aspects on the Law of the Sea (TALOS). Based on the geometry of the bordering baseline, there are two types of equidistance line. The first one is adjacent state equidistance line, where the two states are adjacent to each other. The other one is opposite state equidistance line, where the states are opposite to each other. The contstruction algorithm between these two types of equdistance line is slightly different, so you will keep in mind these type while creating the equidistance line.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end home -->
+                
+                <!-- Video -->
+                <div id="video" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <p class="lead">Watch Me!</p>
+                                <p>Here are some videos of EqDistant Plugin in action.</p>
+                                <p> --> Videos goes here <-- </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end video -->
+                
+                <!-- Install -->
+                <div id="install" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <p class="lead">Are You Ready?</p>
+                                <p>If you see this page, you might already install the plugin in your QGIS. Right?. But if you somehow haven't install it yet, here's someway to install the plugin into your QGIS.</p>
+                                <p> --> steps goes here </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end install -->
+                
+                <!-- Layer -->
+                <div id="layer" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <p class="lead">Yeah! Let's Start</p>
+                                <p>The first thing to keep in mind is this plugin uses line layers as input. So, if your layer data is stored in polygon geometry type you might need to convert that to line layers. You can do this using Polygon to Line tools in Vector > Geometry Tools > Polygons to Line. After converting your layer geometry type, edit the data by deleting unused line segment within the layer. This will decrease the time needed in processing your data.</p>
+                                <p>If you already have the line layer, make sure that the Coordinate Reference System of your layer is UTM, or any CRS using meter as unit. If your layer still in geographic coordinate (the unit is in degrees), you need to reproject the layer to UTM or another CRS as long as the unit is in meter.</p>
+                                <p>When you have those two conditions above met, then hey, you are good to go!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end layer -->
+                
+                <!-- result Type -->
+                <div id="result" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <p class="lead">So, What Do You Want to Get?</p>
+                                <p>By default, without checking anything in result section you will always get an equidistance line as result. Well, that is all this plugin about, right? Other than that, you can get the equidistance points which is basically list of point which construct the equidistance line. If you want to know the coordinate of every point in the line, you might want to check this result type.</p>
+                                    <p>Another result type you can get is the construction line. By checking this option, you will be able to know which points in the baseline layer is used as input in creating the equidistance line. This is also usefull as a tool to check wether your result is right or not. In some cases you might meet some funny result where some line just crossing each other or, you know, some weird stuff happen. If you have construction line information, you can always know which segments or points need to be edited. (yeah unfortunately, the result from this plugin sometimes need to be edited to get those nice clean looking equidistance line. No worry, i'm still working on it)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end result -->
+                
+                <!-- Point -->
+                <div id="point" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <p class="lead">Pick Starting Point</p>
+                                <p>Remember about the types of equidistance line in boundary making mentioned above? If you don't you might want to scroll up again. In this step we'll choose which equidistance line type we should choose. If your baseline layer is opposite to each other, then you have to choose the opposite case. If your baseline layer is adjacent to each other, which means there is a point where the two baselines meet, then you have to choose the adjacent case. You can choose wether it is an opposite case or adjacent case by switching the tab shown in the picture below.</p>
+                                <p> --> insert picture</p>
+                                <p>You will notice that the following option after switching the tab also change. In the Opposite case, you will need to specify four points, two in each segment. This two points are the starting and ending point of the segment in which the equidistance line will be created. In the other hand, adjacent case only need two input points, one in each segment which is the starting point. the ending point is defined where the two segments meet or intersect.</p>
+                                <p>Defining the input point is pretty simple. You can do this by clicking the button and click on the map near your starting or ending point for each segment. After clicking the map, then in the box near the button you will see the coordinate of the point you just clicked.</p>
+                                <p>If you have all those box filled then you are good to go ... to the next step, ofcourse.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Point -->
+                
+                <!-- interval -->
+                <div id="intv" class="page-content inset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <p class="lead">Last Setting!</p>
+                                <p>Interval distance is the searching distance to find the next point in the algorithm. The shorter the distance you define, the result point you get will likely (but not always) more close to each other. The line segment will also has more vertices in it, which will result smoother (but not always better) equidistance line. The time needed in order to process the whole data will also be longer. The setting goes vice versa if you input longer interval distance. So it will be best to try different interval distance which will result best equidistance line for your case.</p>
+                                <p> --> insert picture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Point -->
+                
+            </div>
+            
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+        <!-- ----------------------------------------------------------------------------------------- -->
+    </body>
 </html>
