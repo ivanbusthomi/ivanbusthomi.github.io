@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Starter Template for Bootstrap 3.3.5</title>
+<link rel="shortcut icon" href="">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel=stylesheet href="sandbox.css">
+<style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
+
+<!--[if IE]>
+<script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">Project name</a>
+</div>
+
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div><!--.nav-collapse -->
+</div>
+</nav>
+
+<div class="container">
+<div class="starter-template">
+<h1>Hello, world!</h1>
+<p class="lead">Now you can start your own project with <a target="_blank" href="http://getbootstrap.com/">Bootstrap 3.3.5</a>. This plugin is a fork from <a href="https://github.com/le717/brackets-html-skeleton#readme">HTML Skeleton</a>.</p>
+</div>
+</div>
+
+    <a id="link" class="btn btn-default">sasda</a>
+<div id="linkw">My video</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe width="400" height="300" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+    <!-- asjdlakjfqpwoeiq;kf;asljflkqjwoqwej -->
+    <div class="container">
+
+<p>
+    <h5>Features:</h5>
+    <ul>
+        <li>Responsive design with hover effect</li>
+        <li>Compatible with bootstrap 3.0.0 and Up</li>
+        <li>No Javascript</li>
+    </ul>
+    <hr>
+</p>
+
+<ul class="list-unstyled video-list-thumbs row">
+	<li class="col-lg-3 col-sm-4 col-xs-12">
+		<a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+			<img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
+			<h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+			<span class="glyphicon glyphicon-play-circle"></span>
+			<span class="duration">03:15</span>
+		</a>
+	</li>
+	<li class="col-lg-3 col-sm-4 col-xs-12">
+		<a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+			<img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
+			<h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+			<span class="glyphicon glyphicon-play-circle"></span>
+			<span class="duration">03:15</span>
+		</a>
+	</li>
+	<li class="col-lg-3 col-sm-6 col-xs-12">
+		<a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+			<img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
+			<h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+			<span class="glyphicon glyphicon-play-circle"></span>
+			<span class="duration">03:15</span>
+		</a>
+	</li>
+	<li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+		<a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+			<img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
+			<h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+			<span class="glyphicon glyphicon-play-circle"></span>
+			<span class="duration">03:15</span>
+		</a>
+	</li>
+    <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+		<a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+			<img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
+			<h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+			<span class="glyphicon glyphicon-play-circle"></span>
+			<span class="duration">03:15</span>
+		</a>
+	</li>
+</ul>
+
+</div>
+    
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<script>
+    $('#link').click(function () {
+        var src = 'http://www.youtube.com/v/X7AnGt7WqrA&amp;autoplay=1';
+        $('#myModal').modal('show');
+        $('#myModal iframe').attr('src', src);
+    });
+    //remove video when modal is closed
+    $('#myModal button').click(function () {
+        $('#myModal iframe').removeAttr('src');
+    });
+    //remove video when modal is hidden
+    $('#myModal').on('hidden.bs.modal', function () {
+        $('#myModal iframe').removeAttr('src');
+    });
+</script>
+</body>
+</html>

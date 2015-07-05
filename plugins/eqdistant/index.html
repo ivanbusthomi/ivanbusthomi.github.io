@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>eqdistant web page</title>
+        <title>EqDistant Home Page</title>
         
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -29,174 +29,262 @@
                     <li><a href="#point">Starting Point <span class="sub_icon glyphicon glyphicon-map-marker"></span></a></li>
                     <li><a href="#intv">Interval Distance <span class="sub_icon glyphicon glyphicon-resize-full"></span></a></li>
                     <li><a href="#save">Saving Result <span class="sub_icon glyphicon glyphicon-floppy-disk"></span></a></li>
-                    <li><a href="#fop">F.O.P <span class="sub_icon glyphicon glyphicon-exclamation-sign"></span></a></li>
+                    <li><a href="#">F.O.P <span class="sub_icon glyphicon glyphicon-exclamation-sign"></span></a></li>
                 </ul>
             </div>
 
             <!-- Page content -->
-            <div id="page-content-wrapper">       
+            <div class="col-lg-9">
+                
+                <div id="page-content-wrapper">       
 
-                <!-- Home -->
-                <div id="home" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>EqDistant Plugin How-To</h1>
-                            <div class="well">
-                                <p class="lead">Welcome to EqDistant Plugin website!</p>
-                                <p>EqDistant Plugin is a plugin to create an equidistance line. Equidistance line is a line which every point of the line is equidistant from the nearest points on input lines. Equidistance line is often used to determine maritime boundary between two states, where the input are the baselines of the bordering states.</p>
-                                <p>Equidistance construction algorithm used by this plugin is based on steps of constructing equidistance line in Technical Aspects on the Law of the Sea (TALOS). Based on the geometry of the bordering baseline, there are two types of equidistance line. The first one is adjacent state equidistance line, where the two states are adjacent to each other. The other one is opposite state equidistance line, where the states are opposite to each other. The contstruction algorithm between these two types of equdistance line is slightly different, so you will keep in mind these type while creating the equidistance line.</p>
-                                <img src="img/opposite.png" class="img-rounded img-responsive center-block">
-                                                                
-                            </div>
-                            
-                        </div>
-                    </div>
+                    <!-- Home -->
+                    <div id="home" class="page-content inset">
+
+                        <div class="row">
+                            <div class="col-md-12">
+<div class="page-header">
+                    <h1>EqDistant Plugin How-To <small>and guides</small></h1>
                 </div>
-                <!-- end home -->
-                
-                <!-- Video -->
-                <div id="video" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Watch Me!</p>
-                                <p>Here are some videos of EqDistant Plugin in action.</p>
-                            </div>
-                            <ul class="list-unstyled video-list-thumbs row">
-                                <li class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-                                    <a id="vid_1" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                                        <img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
-                                        <h2>Placeholder for video 1. Rick n' roll</h2>
-                                        <span class="glyphicon glyphicon-play-circle"></span>
-                                        <span class="duration">03:15</span>
-                                    </a>
-                                </li>
-                                <li class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-                                    <a id="vid_2" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                                        <img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
-                                        <h2>Placeholder for video 2. Meow</h2>
-                                        <span class="glyphicon glyphicon-play-circle"></span>
-                                        <span class="duration">03:15</span>
-                                    </a>
-                                </li>
-                                <li class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-                                    <a id="vid_3" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                                        <img src="img/vid.png" alt="Barca" class="img-responsive" height="130px" />
-                                        <h2>Placeholder for video 3. Dududududu</h2>
-                                        <span class="glyphicon glyphicon-play-circle"></span>
-                                        <span class="duration">03:15</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- end video -->
-                
-                <!-- Install -->
-                <div id="install" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Are You Ready?</p>
-                                <p>If you see this page, you might already install the plugin in your QGIS. Right?. But if you somehow haven't install it yet, here's someway to install the plugin into your QGIS.</p>
-                                <p> --> steps goes here </p>
+
+                                <div class="well">
+                                    <p class="lead">Welcome to EqDistant Plugin website!</p>
+                                    <p>EqDistant Plugin is a QGIS plugin to create an equidistance line. Equidistance line is a line which every point of the line is equidistant from the nearest points on input lines. Equidistance line is often used to determine maritime boundary between two states, where the input are the baselines of the bordering states.</p>
+                                    <img src="img/case_opp.png" height="100%" width="400px" title="Fig 1. Boundary between United Kingdom and Netherland" class="img-thumbnail img-responsive center-block"><br/>
+                                    <p>Equidistance construction algorithm used by this plugin is based on steps of constructing equidistance line in Technical Aspects on the Law of the Sea (TALOS). Based on the geometry of the bordering baseline, there are two types of equidistance line. The first one is created from adjacent state, where the coasts of each state are adjacent to each other. The other one is opposite state equidistance line, where the coasts of each states are opposite to each other. The contstruction algorithm between these two types of equdistance line is slightly different, so you may want to keep in mind these types while creating the equidistance line.</p>
+                                    <div class="row clear-fixed">
+                                        <div class="col-md-6">
+                                            <img src="img/the_opp.png" height="400px" width="600px" class="img-thumbnail img-responsive center-block" title="Fig 2. Equidistance Line Between Opposite Coasts">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="img/the_adj.png" height="450px" width="450px" class="img-thumbnail img-responsive center-block" title="Fig 3. Equidistance Line Between Adjacent Coasts">
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end install -->
-                
-                <!-- Layer -->
-                <div id="layer" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Yeah! Let's Start</p>
-                                <p>The first thing to keep in mind is this plugin uses line layers as input. So, if your layer data is stored in polygon geometry type you might need to convert that to line layers. You can do this using Polygon to Line tools in Vector > Geometry Tools > Polygons to Line. After converting your layer geometry type, edit the data by deleting unused line segment within the layer. This will decrease the time needed in processing your data.</p>
-                                <p>If you already have the line layer, make sure that the Coordinate Reference System of your layer is UTM, or any CRS using meter as unit. If your layer still in geographic coordinate (the unit is in degrees), you need to reproject the layer to UTM or another CRS as long as the unit is in meter.</p>
-                                <p>When you have those two conditions above met, then hey, you are good to go!</p>
+                    <!-- end home -->
+
+                    <!-- Video -->
+                    <div id="video" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Watch Me!</p>
+                                    <p>If you want to see EqDistant Plugin in action, just click these videos below.</p>
+                                <ul class="list-unstyled video-list-thumbs row">
+                                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                        <a id="vid_1" title="Opposite States">
+                                            <img src="img/v1.png" alt="Opposite" class="img-responsive" height="130px" />
+                                            <h2>QGIS EqDistant Plugin - Opposite States Case</h2>
+                                            <span class="glyphicon glyphicon-play-circle"></span>
+                                            <span class="duration">01:04</span>
+                                        </a>
+                                    </li>
+                                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                        <a id="vid_2" title="Adjacent States">
+                                            <img src="img/v2.png" alt="Adjacent" class="img-responsive" height="130px" />
+                                            <h2>QGIS EqDistant Plugin - Adjacent States Case</h2>
+                                            <span class="glyphicon glyphicon-play-circle"></span>
+                                            <span class="duration">01:05</span>
+                                        </a>
+                                    </li>
+                                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                        <a id="vid_3" title="Feature Selection">
+                                            <img src="img/v3.png" alt="Select" class="img-responsive" height="130px" />
+                                            <h2>QGIS EqDistant Plugin - Feature Selection</h2>
+                                            <span class="glyphicon glyphicon-play-circle"></span>
+                                            <span class="duration">01:33</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end layer -->
-                
-                <!-- result Type -->
-                <div id="result" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">So, What Do You Want to Get?</p>
-                                <p>By default, without checking anything in result section you will always get an equidistance line as result. Well, that is all this plugin about, right? Other than that, you can get the equidistance points which is basically list of point which construct the equidistance line. If you want to know the coordinate of every point in the line, you might want to check this result type.</p>
-                                    <p>Another result type you can get is the construction line. By checking this option, you will be able to know which points in the baseline layer is used as input in creating the equidistance line. This is also usefull as a tool to check wether your result is right or not. In some cases you might meet some funny result where some line just crossing each other or, you know, some weird stuff happen. If you have construction line information, you can always know which segments or points need to be edited. (yeah unfortunately, the result from this plugin sometimes need to be edited to get those nice clean looking equidistance line. No worry, i'm still working on it)</p>
+                    <!-- end video -->
+
+                    <!-- Install -->
+                    <div id="install" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Are You Ready?</p>
+                                    <p>If you see this page, you might already install the plugin in your QGIS. Right?. But if you somehow haven't install it yet, here's someway to install the plugin into your QGIS from the repository.</p>
+
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                          <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                              Step #1: Open Your QGIS
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                          <div class="panel-body">
+                                            This plugin requires a QGIS version 2.0 or higher to run. Before opening QGIS, make sure your computer is connected to the internet.
+                                              <img src="img/qgis.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                          <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                              Step #2: Accessing Repository
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                          <div class="panel-body">
+                                            Repository is an online storage where the plugin is stored. To add EqDistant plugin to your QGIS installation, open <kbd>Plugins</kbd> > <kbd>Manage and Installs Plugins ...</kbd>. In the next dialog, Click <kbd>All</kbd> tab. There you should find the EqDistant plugin which is stored in QGIS repostory ready to be installed.<br/>
+                                              <img src="img/ins1.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                              However, if somehow you can't find it, you need to install the plugin from another repository. Go  to <kbd>Settings</kbd> tab and click <kbd>Add...</kbd> button to add custom repository. Specify any name you want in the name section, but you have to fill <u>http://ivanbusthomi.github.io/repository/plugins.xml</u> as URL.
+                                              <img src="img/ins2.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                          <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                              Step #3: Plugin Installation
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                          <div class="panel-body">
+                                            Now that EqDistant plugin is listed in your plugin list, you can start installing the plugin by clicking <kbd>Install</kbd> button.
+                                              <img src="img/ins3.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end result -->
-                
-                <!-- Point -->
-                <div id="point" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Pick Starting Point</p>
-                                <p>Remember about the types of equidistance line in boundary making mentioned above? If you don't you might want to scroll up again. In this step we'll choose which equidistance line type we should choose. If your baseline layer is opposite to each other, then you have to choose the opposite case. If your baseline layer is adjacent to each other, which means there is a point where the two baselines meet, then you have to choose the adjacent case. You can choose wether it is an opposite case or adjacent case by switching the tab shown in the picture below.</p>
-                                <p> --> insert picture</p>
-                                <p>You will notice that the following option after switching the tab also change. In the Opposite case, you will need to specify four points, two in each segment. This two points are the starting and ending point of the segment in which the equidistance line will be created. In the other hand, adjacent case only need two input points, one in each segment which is the starting point. the ending point is defined where the two segments meet or intersect.</p>
-                                <p>Defining the input point is pretty simple. You can do this by clicking the button and click on the map near your starting or ending point for each segment. After clicking the map, then in the box near the button you will see the coordinate of the point you just clicked.</p>
-                                <p>If you have all those box filled then you are good to go ... to the next step, ofcourse.</p>
+                    <!-- end install -->
+
+                    <!-- Layer -->
+                    <div id="layer" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Yeah! Let's Start</p>
+                                    <p>The first thing to keep in mind is this plugin uses line layers as input. So, if your layer data is stored in polygon geometry type you might need to convert that to line layers. You can do this using Polygon to Line tools in <kbd>Vector</kbd> > <kbd>Geometry Tools</kbd> > <kbd>Polygons to Line</kbd>. After converting your layer geometry type, edit the data by deleting unused line segment within the layer. This will decrease the time needed in processing your data.</p>
+                                    <div class="row clear-fix">
+                                        <div class="col-md-4"><img src="img/pro1.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4"><img src="img/pro2.png" height="100%" width="500px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4"><img src="img/pro3.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                    </div>
+
+                                    <br/>
+                                    <p>If you already have the line layer, make sure that the Coordinate Reference System (CRS) of your layer is UTM, or any CRS using meter as unit. If your layer still in geographic coordinate (the unit is in degrees), you need to reproject the layer to UTM or another CRS as long as the unit is in meter. Make sure you have the right CRS by looking into your layer's metadata in <kbd>Layer Properties</kbd> dialog under <kbd>Metadata</kbd> tab.</p>
+                                    <img src="img/pro4.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
+                                    <p>When you have those two conditions above met, then you are good to go! Now, go ahead and click the icon of EqDistant plugin, and you will see the main dialog of the plugin like below. Keep in mind that you have to load atleast two line layers in order for the dialog to shows. Grab the sample data <a href="ddl/sample_data.zip" class="label label-warning">Here</a>!.</p>
+                                    <img src="img/pro5.png" height="100%" width="550px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end Point -->
-                
-                <!-- interval -->
-                <div id="intv" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Last Setting!</p>
-                                <p>Interval distance is the searching distance to find the next point in the algorithm. The shorter the distance you define, the result point you get will likely (but not always) more close to each other. The line segment will also has more vertices in it, which will result smoother (but not always better) equidistance line. The time needed in order to process the whole data will also be longer. The setting goes vice versa if you input longer interval distance. So it will be best to try different interval distance which will result best equidistance line for your case.</p>
-                                <p> --> insert picture</p>
+                    <!-- end layer -->
+
+                    <!-- result Type -->
+                    <div id="result" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">So, What Do You Want to Get?</p>
+                                    <img src="img/res1.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
+                                    <p>By default, without checking anything in Additional Result section you will always get an equidistance line as result. Other than that, you can get the equidistance points which is basically list of point which construct the equidistance line. If you want to know the coordinate of every point in the line, you might want to check this result type.</p>
+                                    <div class="row">
+                                        <div class="col-md-4"><img src="img/res2.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4"><img src="img/res3.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4"><img src="img/res4.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                    </div>
+                                        <p>Another result type you can get is the construction line. By checking this option, you will be able to know which points in the baseline layer is used as input in creating the equidistance line. This is also usefull as a tool to check whether your result is right or not. In some cases you might meet some funny result where some line just crossing each other or, you know, some weird stuff happen. If you have construction line information, you can always know which segments or points need to be edited. (yeah unfortunately, the result from this plugin sometimes need to be edited to get those nice clean looking equidistance line. No worry, i'm still working on it)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end Interval -->
-                
-                <!-- Saving result -->
-                <div id="save" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Saving Your Result</p>
-                                <p>The result you get from the plugin is saved by default in a temporary layer. So, if you already get the best result, you have to manually save it to your diskdrive using QGIS layer saving feature. You can do this by rightclicking the layer you want to save and click Save Layer As. The next part is pretty much self-explanatory, i hope. :)</p>
-                                <p> --> insert picture</p>
+                    <!-- end result -->
+
+                    <!-- Point -->
+                    <div id="point" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Pick Starting Point</p>
+                                    <p>Remember about the types of equidistance line in boundary making mentioned above? If you don't you might want to scroll up again. In this step we'll choose which equidistance line type we should choose. If your baseline layer is opposite to each other, then you have to choose the opposite case. If your baseline layer is adjacent to each other, which means there is a point where the two baselines meet, then you have to choose the adjacent case. You can choose wether it is an opposite case or adjacent case by switching the tab shown in the picture below.</p>
+                                <img src="img/pick1.png" height="100%" width="400px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                    <p>You will notice that the following option after switching the tab also change. In the Opposite case, you will need to specify four points, two in each segment. This two points are the starting and ending point of the segment in which the equidistance line will be created. In the other hand, adjacent case only need two input points, one in each segment which is the starting point. the ending point is defined where the two segments meet or intersect.</p>
+                                    <div class="row">
+                                        <div class="col-md-6"><img src="img/pick2.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-6"><img src="img/pick3.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                    </div>
+                                    <p>Defining the input point is pretty simple. You can do this by clicking the button and click on the map near your starting or ending point for each segment. After clicking the map, then in the box near the button you will see the coordinate of the point you just clicked.</p>
+                                    <img src="img/pick4.png" height="100%" width="200px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                    <p>If you have all those box filled then you are good to go ... to the next step, ofcourse.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end save -->
-                
-                <!-- Frequently Occured Problem -->
-                <div id="fop" class="page-content inset">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <p class="lead">Frequently Occured Problem</p>
-                                <p>This plugin is still in development process, and will always be developed. That's why there will be many problems or bugs that occured. Here are list of some problems and tips which sometimes appear in several cases.</p>
-                                <p> --> insert picture</p>
+                    <!-- end Point -->
+
+                    <!-- interval -->
+                    <div id="intv" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Last Setting!</p>
+                                    <p>Interval distance is the searching distance to find the next point in the algorithm. The shorter the distance you define, the result point you get will likely (but not always) closer to each other. The line segment will also has more vertices in it, which will result smoother (but not always better) equidistance line. The time needed in order to process the whole data will also be longer. The setting goes vice versa if you input longer interval distance. So it will be best to try different interval distance which will result best equidistance line for your case.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- end Interval -->
+
+                    <!-- Saving result -->
+                    <div id="save" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Saving Your Result</p>
+                                    <p>The result you get from the plugin is saved by default in a temporary layer. So, if you already get the best result, you have to manually save it to your diskdrive using QGIS layer saving feature. You can do this by rightclicking the layer you want to save and click Save Layer As. The next part is pretty much self-explanatory, i hope. :)</p>
+                                    <img src="img/save1.png" height="100%" width="400px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end save -->
+
+                    <!-- Frequently Occured Problem>
+                    <div id="fop" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Frequently Occured Problem</p>
+                                    <p>This plugin is still in development process, and will always be developed. That's why there will be many problems or bugs that occured. Here are list of some problems and tips which sometimes appear in several cases.</p>
+                                    <p> insert picture</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    < end save -->
+
                 </div>
-                <!-- end save -->
-                
             </div>
-            
+            <div class="col-lg-3">
+                <!--Placeholder for rightside-->
+            </div>
             
         </div>
         
@@ -205,11 +293,8 @@
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
                     <div class="modal-body">
-                        <iframe width="400" height="300" frameborder="0" allowfullscreen=""></iframe>
+                        <iframe width="100%" height="350" frameborder="0" allowfullscreen=""></iframe>
                     </div>
                 </div>
             </div>
@@ -227,7 +312,7 @@
         <!-- Script Modal 1 -->
         <script>
             $('#vid_1').click(function () {
-                var src = 'http://www.youtube.com/v/dQw4w9WgXcQ&amp;autoplay=1';
+                var src = 'http://www.youtube.com/v/NgvcXIdLtGo&amp;autoplay=1';
                 $('#myModal').modal('show');
                 $('#myModal iframe').attr('src', src);
             });
@@ -243,7 +328,7 @@
         <!-- Script video 2 -->
         <script>
             $('#vid_2').click(function () {
-                var src = 'http://www.youtube.com/v/QH2-TGUlwu4&amp;autoplay=1';
+                var src = 'http://www.youtube.com/v/-uZsJjvrNSQ&amp;autoplay=1';
                 $('#myModal').modal('show');
                 $('#myModal iframe').attr('src', src);
             });
@@ -259,7 +344,7 @@
         <!-- Script video 3 -->
         <script>
             $('#vid_3').click(function () {
-                var src = 'http://www.youtube.com/v/y6120QOlsfU&amp;autoplay=1';
+                var src = 'http://www.youtube.com/v/klgwQHIwJGY&amp;autoplay=1';
                 $('#myModal').modal('show');
                 $('#myModal iframe').attr('src', src);
             });
