@@ -180,9 +180,9 @@
                                     <p class="lead">Yeah! Let's Start</p>
                                     <p>The first thing to keep in mind is this plugin uses line layers as input. So, if your layer data is stored in polygon geometry type you might need to convert that to line layers. You can do this using Polygon to Line tools in <kbd>Vector</kbd> > <kbd>Geometry Tools</kbd> > <kbd>Polygons to Line</kbd>. After converting your layer geometry type, edit the data by deleting unused line segment within the layer. This will decrease the time needed in processing your data.</p>
                                     <div class="row clear-fix">
-                                        <div class="col-md-4"><img src="img/pro1.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-4"><img src="img/pro2.png" height="100%" width="500px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-4"><img src="img/pro3.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12"><img src="img/pro1.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12"><img src="img/pro2.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-lg-4 col-md-12 col-sm-12"><img src="img/pro3.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
                                     </div>
 
                                     <br/>
@@ -206,9 +206,9 @@
                                     <img src="img/res1.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
                                     <p>By default, without checking anything in Additional Result section you will always get an equidistance line as result. Other than that, you can get the equidistance points which is basically list of point which construct the equidistance line. If you want to know the coordinate of every point in the line, you might want to check this result type.</p>
                                     <div class="row">
-                                        <div class="col-md-4"><img src="img/res2.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-4"><img src="img/res3.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-4"><img src="img/res4.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="img/res2.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="img/res3.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12"><img src="img/res4.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
                                     </div>
                                         <p>Another result type you can get is the construction line. By checking this option, you will be able to know which points in the baseline layer is used as input in creating the equidistance line. This is also usefull as a tool to check whether your result is right or not. In some cases you might meet some funny result where some line just crossing each other or, you know, some weird stuff happen. If you have construction line information, you can always know which segments or points need to be edited. (yeah unfortunately, the result from this plugin sometimes need to be edited to get those nice clean looking equidistance line. No worry, i'm still working on it)</p>
                                 </div>
@@ -266,19 +266,20 @@
                     </div>
                     <!-- end save -->
 
-                    <!-- Frequently Occured Problem>
+                    <!-- Frequently Occured Problem -->
                     <div id="fop" class="page-content inset">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="well">
-                                    <p class="lead">Frequently Occured Problem</p>
-                                    <p>This plugin is still in development process, and will always be developed. That's why there will be many problems or bugs that occured. Here are list of some problems and tips which sometimes appear in several cases.</p>
-                                    <p> insert picture</p>
+                                    <p class="lead">Congratulations!</p>
+                                    <p>Now that you have your equidistance line, you can simulate your boundary line using equidistance method. Note that the result you get will sometimes contains bugs or inperfect. Therefore, you have to manually recheck your result by looking at the geometry of your line result. Construction line also will help alot during recheck process since the lines should not be crossing one another. If there are construction lines that cross each other, most likely that part is still imperfect. </p>
+                                    <p>For more information and feedback, send me email at <u>ivanbusthomi@gmail.com</u>. Cheers! </p>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-                    < end save -->
+                    <-- end save -->
 
                 </div>
             </div>
