@@ -29,7 +29,7 @@
                     <li><a href="#point">Starting Point <span class="sub_icon glyphicon glyphicon-map-marker"></span></a></li>
                     <li><a href="#intv">Interval Distance <span class="sub_icon glyphicon glyphicon-resize-full"></span></a></li>
                     <li><a href="#save">Saving Result <span class="sub_icon glyphicon glyphicon-floppy-disk"></span></a></li>
-                    <li><a href="#">F.O.P <span class="sub_icon glyphicon glyphicon-exclamation-sign"></span></a></li>
+                    <li><a href="#feed">Feedback <span class="sub_icon glyphicon glyphicon-exclamation-sign"></span></a></li>
                 </ul>
             </div>
 
@@ -54,7 +54,7 @@
                                     <p>Equidistance construction algorithm used by this plugin is based on steps of constructing equidistance line in Technical Aspects on the Law of the Sea (TALOS). Based on the geometry of the bordering baseline, there are two types of equidistance line. The first one is created from adjacent state, where the coasts of each state are adjacent to each other. The other one is opposite state equidistance line, where the coasts of each states are opposite to each other. The contstruction algorithm between these two types of equdistance line is slightly different, so you may want to keep in mind these types while creating the equidistance line.</p>
                                     <div class="row clear-fixed">
                                         <div class="col-md-6">
-                                            <img src="img/the_opp.png" height="400px" width="600px" class="img-thumbnail img-responsive center-block" title="Fig 2. Equidistance Line Between Opposite Coasts">
+                                            <img src="img/the_opp.png" height="400px" width="450px" class="img-thumbnail img-responsive center-block" title="Fig 2. Equidistance Line Between Opposite Coasts">
                                         </div>
                                         <div class="col-md-6">
                                             <img src="img/the_adj.png" height="450px" width="450px" class="img-thumbnail img-responsive center-block" title="Fig 3. Equidistance Line Between Adjacent Coasts">
@@ -78,7 +78,7 @@
                                 <ul class="list-unstyled video-list-thumbs row">
                                     <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                                         <a id="vid_1" title="Opposite States">
-                                            <img src="img/v1.png" alt="Opposite" class="img-responsive" height="130px" />
+                                            <img src="img/v1.png" alt="Opposite" class="img-responsive" height="130px"/>
                                             <h2>QGIS EqDistant Plugin - Opposite States Case</h2>
                                             <span class="glyphicon glyphicon-play-circle"></span>
                                             <span class="duration">01:04</span>
@@ -143,9 +143,9 @@
                                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                           <div class="panel-body">
                                             Repository is an online storage where the plugin is stored. To add EqDistant plugin to your QGIS installation, open <kbd>Plugins</kbd> > <kbd>Manage and Installs Plugins ...</kbd>. In the next dialog, Click <kbd>All</kbd> tab. There you should find the EqDistant plugin which is stored in QGIS repostory ready to be installed.<br/>
-                                              <img src="img/ins1.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                              <img src="img/ins1.png" height="100%" width="600px" title="Fig 5. QGIS Plugins Dialog" class="img-thumbnail img-responsive center-block">
                                               However, if somehow you can't find it, you need to install the plugin from another repository. Go  to <kbd>Settings</kbd> tab and click <kbd>Add...</kbd> button to add custom repository. Specify any name you want in the name section, but you have to fill <u>http://ivanbusthomi.github.io/repository/plugins.xml</u> as URL.
-                                              <img src="img/ins2.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                              <img src="img/ins2.png" height="100%" width="600px" title="Fig 6. QGIS Repository details" class="img-thumbnail img-responsive center-block">
                                           </div>
                                         </div>
                                       </div>
@@ -160,7 +160,7 @@
                                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                           <div class="panel-body">
                                             Now that EqDistant plugin is listed in your plugin list, you can start installing the plugin by clicking <kbd>Install</kbd> button.
-                                              <img src="img/ins3.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                              <img src="img/ins3.png" height="100%" width="600px" title="Fig 7. Install Plugin" class="img-thumbnail img-responsive center-block">
                                           </div>
                                         </div>
                                       </div>
@@ -180,16 +180,16 @@
                                     <p class="lead">Yeah! Let's Start</p>
                                     <p>The first thing to keep in mind is this plugin uses line layers as input. So, if your layer data is stored in polygon geometry type you might need to convert that to line layers. You can do this using Polygon to Line tools in <kbd>Vector</kbd> > <kbd>Geometry Tools</kbd> > <kbd>Polygons to Line</kbd>. After converting your layer geometry type, edit the data by deleting unused line segment within the layer. This will decrease the time needed in processing your data.</p>
                                     <div class="row clear-fix">
-                                        <div class="col-lg-4 col-md-6 col-sm-12"><img src="img/pro1.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12"><img src="img/pro2.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-lg-4 col-md-12 col-sm-12"><img src="img/pro3.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12"><img src="img/pro1.png" height="100%" width="350px" title="Fig 8. Polygon Shapefile" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12"><img src="img/pro2.png" height="100%" width="350px" title="Fig 9. Converted Polygon to Polyline" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-lg-4 col-md-12 col-sm-12"><img src="img/pro3.png" height="100%" width="350px" title="Fig 10. Polyline Layer That Has Been Cut" class="img-thumbnail img-responsive center-block"></div>
                                     </div>
 
                                     <br/>
                                     <p>If you already have the line layer, make sure that the Coordinate Reference System (CRS) of your layer is UTM, or any CRS using meter as unit. If your layer still in geographic coordinate (the unit is in degrees), you need to reproject the layer to UTM or another CRS as long as the unit is in meter. Make sure you have the right CRS by looking into your layer's metadata in <kbd>Layer Properties</kbd> dialog under <kbd>Metadata</kbd> tab.</p>
-                                    <img src="img/pro4.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
+                                    <img src="img/pro4.png" height="100%" width="350px" title="Fig 11. Layer Metadata" class="img-thumbnail img-responsive center-block"><br/>
                                     <p>When you have those two conditions above met, then you are good to go! Now, go ahead and click the icon of EqDistant plugin, and you will see the main dialog of the plugin like below. Keep in mind that you have to load atleast two line layers in order for the dialog to shows. Grab the sample data <a href="ddl/sample_data.zip" class="label label-warning">Here</a>!.</p>
-                                    <img src="img/pro5.png" height="100%" width="550px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
+                                    <img src="img/pro5.png" height="100%" width="550px" title="Fig 12. EqDistant Plugin Dialog" class="img-thumbnail img-responsive center-block"><br/>
                                     
                                 </div>
                             </div>
@@ -206,9 +206,9 @@
                                     <img src="img/res1.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"><br/>
                                     <p>By default, without checking anything in Additional Result section you will always get an equidistance line as result. Other than that, you can get the equidistance points which is basically list of point which construct the equidistance line. If you want to know the coordinate of every point in the line, you might want to check this result type.</p>
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="img/res2.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="img/res3.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12"><img src="img/res4.png" height="100%" width="250px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="img/res2.png" height="100%" width="250px" title="Fig 13. Equidistance Line Result" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="img/res3.png" height="100%" width="250px" title="Fig 14. Equidistance Line With Construction Line" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12"><img src="img/res4.png" height="100%" width="250px" title="Fig 15. Equidistance Line With Equidistant Point" class="img-thumbnail img-responsive center-block"></div>
                                     </div>
                                         <p>Another result type you can get is the construction line. By checking this option, you will be able to know which points in the baseline layer is used as input in creating the equidistance line. This is also usefull as a tool to check whether your result is right or not. In some cases you might meet some funny result where some line just crossing each other or, you know, some weird stuff happen. If you have construction line information, you can always know which segments or points need to be edited. (yeah unfortunately, the result from this plugin sometimes need to be edited to get those nice clean looking equidistance line. No worry, i'm still working on it)</p>
                                 </div>
@@ -224,14 +224,14 @@
                                 <div class="well">
                                     <p class="lead">Pick Starting Point</p>
                                     <p>Remember about the types of equidistance line in boundary making mentioned above? If you don't you might want to scroll up again. In this step we'll choose which equidistance line type we should choose. If your baseline layer is opposite to each other, then you have to choose the opposite case. If your baseline layer is adjacent to each other, which means there is a point where the two baselines meet, then you have to choose the adjacent case. You can choose wether it is an opposite case or adjacent case by switching the tab shown in the picture below.</p>
-                                <img src="img/pick1.png" height="100%" width="400px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                <img src="img/pick1.png" height="100%" width="400px" title="Fig 16. Tab Option Between Case" class="img-thumbnail img-responsive center-block">
                                     <p>You will notice that the following option after switching the tab also change. In the Opposite case, you will need to specify four points, two in each segment. This two points are the starting and ending point of the segment in which the equidistance line will be created. In the other hand, adjacent case only need two input points, one in each segment which is the starting point. the ending point is defined where the two segments meet or intersect.</p>
                                     <div class="row">
-                                        <div class="col-md-6"><img src="img/pick2.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
-                                        <div class="col-md-6"><img src="img/pick3.png" height="100%" width="350px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-6"><img src="img/pick2.png" height="100%" width="350px" title="Fig 17. Opposite Case Tab" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-6"><img src="img/pick3.png" height="100%" width="350px" title="Fig 18. Adjacent Case Tab" class="img-thumbnail img-responsive center-block"></div>
                                     </div>
                                     <p>Defining the input point is pretty simple. You can do this by clicking the button and click on the map near your starting or ending point for each segment. After clicking the map, then in the box near the button you will see the coordinate of the point you just clicked.</p>
-                                    <img src="img/pick4.png" height="100%" width="200px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                    <img src="img/pick4.png" height="100%" width="200px" title="Fig 18. Coordinate Captured From Map Canvas" class="img-thumbnail img-responsive center-block">
                                     <p>If you have all those box filled then you are good to go ... to the next step, ofcourse.</p>
                                 </div>
                             </div>
@@ -259,7 +259,7 @@
                                 <div class="well">
                                     <p class="lead">Saving Your Result</p>
                                     <p>The result you get from the plugin is saved by default in a temporary layer. So, if you already get the best result, you have to manually save it to your diskdrive using QGIS layer saving feature. You can do this by rightclicking the layer you want to save and click Save Layer As. The next part is pretty much self-explanatory, i hope. :)</p>
-                                    <img src="img/save1.png" height="100%" width="400px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                    <img src="img/save1.png" height="100%" width="400px" title="Fig 19. Saving Layer In QGIS" class="img-thumbnail img-responsive center-block">
                                 </div>
                             </div>
                         </div>
@@ -267,7 +267,7 @@
                     <!-- end save -->
 
                     <!-- Frequently Occured Problem -->
-                    <div id="fop" class="page-content inset">
+                    <div id="feed" class="page-content inset">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="well">
@@ -279,7 +279,6 @@
                             </div>
                         </div>
                     </div>
-                    <-- end save -->
 
                 </div>
             </div>
