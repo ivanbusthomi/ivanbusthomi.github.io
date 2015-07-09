@@ -16,6 +16,7 @@ var vectorStyle = new ol.style.Style({
 function initMap(){
     map = new ol.Map({
         target: 'map',
+        controls:[],
         renderer: 'canvas',
         view: new ol.View({
             projection: 'EPSG:3857',
@@ -24,6 +25,18 @@ function initMap(){
         })
     }); //end map
     
+    // -----------
+    // Map Control
+    // -----------
+    // Zoom Slider
+    var zoomslider = new ol.control.ZoomSlider(
+    );
+    map.addControl(zoomslider);
+
+    
+    // -----------
+    // Map Layer
+    // -----------
     //OSM layer
     var osmLayer = new ol.layer.Tile({
         source: new ol.source.OSM()

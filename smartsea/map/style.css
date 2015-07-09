@@ -91,6 +91,36 @@ html,body {
     z-index: 0;
 }
 
+/* ZoomSlider */
+#map .ol-zoomslider{
+  top: 10px;
+  left: auto;
+  right: 8px;
+  background-color: rgba(0,69,100,0.2);
+  width: 200px;
+  height: 15px;
+  padding: 0;
+  box-shadow: 0 0 5px rgb(0,69,100);
+  
+}
+
+#map .ol-zoomslider:hover {
+  background-color: rgba(0,69,100,0.3);
+}
+
+#map .ol-zoomslider-thumb {
+  height: 25px;
+  width: 10px;
+  margin: -5px 0px 0px 0px;
+  filter: none;
+  background-color: rgba(0,69,100,0.6);
+  border-radius: 5px;
+}
+
+#map a.ol-zoomslider-handle:hover {
+  background-color: rgba(0,69,100,0.7);
+}
+
 /* ------------------------- 
         Accordion
 ---------------------------*/
