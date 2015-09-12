@@ -1,5 +1,10 @@
 {
     "jscodehints.detectedExclusions": [
-        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/js/ol.js"
+        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/js/ol.js",
+        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/js/npm.js",
+        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/main.js",
+        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/js/bootstrap.min.js",
+        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/js/bootstrap.js",
+        "C:/Users/Ivan Busthomi/Documents/GitHub/ivanbusthomi.github.io/smartsea/map/js/ol.js"
     ]
 }

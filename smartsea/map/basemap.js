@@ -120,10 +120,34 @@ function initMap(){
     });
     map.addLayer(jkt_pusat);
     
+    //GeoJSON pola_ruang
+    var pola_ruang = new ol.layer.Vector({
+        source : new ol.source.Vector({
+            projection : 'EPSG:900913',
+            url : './sampledata/pola_ruang.geojson',
+            format: new ol.format.GeoJSON()
+        }),
+        style: vectorStyle
+    });
+    map.addLayer(pola_ruang);
+    
+    //GeoJSON rencana_union
+    var rencana_union = new ol.layer.Vector({
+        source : new ol.source.Vector({
+            projection : 'EPSG:900913',
+            url : './sampledata/rencana_union.geojson',
+            format: new ol.format.GeoJSON()
+        }),
+        style: vectorStyle
+    });
+    map.addLayer(rencana_union);
+    
     // Layer Checkbox Toggle
     $("#checkboxlayer1").prop('checked',true);
-    $("#checkboxlayer2").prop('checked',true);
+    $("#checkboxlayer2").prop('checked',false);
     $("#checkboxlayer3").prop('checked',true);
+    $("#checkboxlayer4").prop('checked',true);
+    $("#checkboxlayer5").prop('checked',true);
     
     // Toggle method    
     function checkWFS(){
@@ -162,8 +186,24 @@ function initMap(){
         }
     };
     $("#checkboxlayer3").change(function event(){checkOSM()});
+    
+    function checkPola(){
+        if($("#checkboxlayer4").prop('checked')==true){
+            pola_ruang.setVisible(true);
+        }else{
+            pola_ruang.setVisible(false);
+        }
+    };
+    $("#checkboxlayer4").change(function event(){checkPola()});
         
-    
+    function checkRencanaUnion(){
+        if($("#checkboxlayer5").prop('checked')==true){
+            rencana_union.setVisible(true);
+        }else{
+            rencana_union.setVisible(false);
+        }
+    };
+    $("#checkboxlayer5").change(function event(){checkRencanaUnion()});
             
-    
+
 }// end initMap
