@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Halaman Awal Plugin EqDistant</title>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+                
+    </head>
+
+    <body>
+        
+        <div id="wrapper" class="active">      
+    
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul id="sidebar_menu" class="sidebar-nav">
+                    <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu <span id="main_icon" class="glyphicon glyphicon-align-justify"></span> </a></li>
+                </ul>
+
+                <ul class="sidebar-nav" id="sidebar">
+                    <li><a href="#home">Awal <span class="sub_icon glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="#video">Video Demo <span class="sub_icon glyphicon glyphicon-expand"></span></a></li>
+                    <li><a href="#install">Pemasangan <span class="sub_icon glyphicon glyphicon-save"></span></a></li>
+                    <li><a href="#layer">Penggunaan <span class="sub_icon glyphicon glyphicon-plus"></span></a></li>
+                    <li><a href="#result">Tipe Hasil <span class="sub_icon glyphicon glyphicon-tasks"></span></a></li>
+                    <li><a href="#point">Titik Awal <span class="sub_icon glyphicon glyphicon-map-marker"></span></a></li>
+                    <li><a href="#intv">Jarak Interval <span class="sub_icon glyphicon glyphicon-resize-full"></span></a></li>
+                    <li><a href="#save">Simpan Hasil <span class="sub_icon glyphicon glyphicon-floppy-disk"></span></a></li>
+                    <li><a href="#feed">Hubungi kami <span class="sub_icon glyphicon glyphicon-exclamation-sign"></span></a></li>
+                </ul>
+            </div>
+
+            <!-- Page content -->
+            <div class="col-lg-9">
+                
+                <div id="page-content-wrapper">       
+
+                    <!-- Home -->
+                    <div id="home" class="page-content inset">
+
+                        <div class="row">
+                            <div class="col-md-12">
+<div class="page-header">
+                    <h1>Halaman Awal Plugin EqDistant <small> dan Panduan Penggunaan</small></h1>
+                </div>
+
+                                <div class="well">
+                                    <p class="lead">Selamat Datang!</p>
+                                    <p> Plugin EqDistant merupakan plugin pada QGIS yang digunakan untuk membuat garis ekuidistan. Garis ekuidistan itu sendiri adalah sebuah garis dimana setiap titik pada garis tersebut memiliki jarak yang sama dengan titik pada garis pangkal. Garis ekuidistan merupakan garis yang sering digunakan sebagai garis batas antara dua garis pangkal daerah yang berbeda.</p>
+                                    <img src="../img/case_opp.png" height="100%" width="400px" title="Fig 1. Boundary between United Kingdom and Netherland" class="img-thumbnail img-responsive center-block"><br/>
+                                    <p>Algoritma pembentukan garis ekuidistan yang digunakan pada plugin ini bersumber dari tahapan pembentukan garis ekuidistan yang tertera pada aspek teknis UNCLOS (<i>A Manual on Technical Aspects of the Law of the Sea</i>). Berdasarkan hubungan antara kedua garis pangkal, garis ekuidistan dapat dibagi menjadi dua yaitu garis ekuidistan untuk daerah berseberangan dan garis ekuidistan untuk daerah bersebelahan. Algoritma pembentukan kedua jenis garis ekuidistan memiliki sedikit perbedaan yang mengakibatkan perbedaan pada titik input awal pada pemrosesan plugin.</p>                                   
+                                    <div class="row clear-fixed">
+                                        <div class="col-md-6">
+                                            <img src="../img/the_opp.png" height="400px" width="450px" class="img-thumbnail img-responsive center-block" title="Fig 2. Equidistance Line Between Opposite Coasts">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="../img/the_adj.png" height="450px" width="450px" class="img-thumbnail img-responsive center-block" title="Fig 3. Equidistance Line Between Adjacent Coasts">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end home -->
+
+                    <!-- Video -->
+                    <div id="video" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Saksikan Plugin EqDistant Beraksi!</p>
+                                    <p>Video-video berikut ini menunjukkan penggunaan plugin EqDistant.</p>
+                                <ul class="list-unstyled video-list-thumbs row">
+                                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                        <a id="vid_1" title="Opposite States">
+                                            <img src="../img/v1.png" alt="Opposite" class="img-responsive" height="130px"/>
+                                            <h2>Plugin EqDistant - Daerah Berhadapan</h2>
+                                            <span class="glyphicon glyphicon-play-circle"></span>
+                                            <span class="duration">01:04</span>
+                                        </a>
+                                    </li>
+                                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                        <a id="vid_2" title="Adjacent States">
+                                            <img src="../img/v2.png" alt="Adjacent" class="img-responsive" height="130px" />
+                                            <h2>Plugin EqDistant - Daerah Bersebelahan</h2>
+                                            <span class="glyphicon glyphicon-play-circle"></span>
+                                            <span class="duration">01:05</span>
+                                        </a>
+                                    </li>
+                                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                        <a id="vid_3" title="Feature Selection">
+                                            <img src="../img/v3.png" alt="Select" class="img-responsive" height="130px" />
+                                            <h2>Plugin EqDistant - Penggunaan Fitur Terpilih</h2>
+                                            <span class="glyphicon glyphicon-play-circle"></span>
+                                            <span class="duration">01:33</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end video -->
+
+                    <!-- Install -->
+                    <div id="install" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Apakah Anda Siap?</p>
+                                    <p>Apakah anda telah memasang plugin EqDistant pada perangkat komputer anda? Jika belum terpasang, ikuti langkah-langkah berikut untuk ini. </p>
+                                    
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                          <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                              Langkah #1: Buka QGIS anda
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                          <div class="panel-body">
+                                            Plugin ini dapat berjalan pada QGIS versi 2.0 ke atas. Sebelum membuka QGIS, pastikan perangkat komputer anda telah terkoneksi dengan internet.                                              
+                                              <img src="../img/qgis.png" height="100%" width="600px" title="Fig 4. QGIS version 2.8.0 Wien" class="img-thumbnail img-responsive center-block">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                          <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                              Langkah #2: Mengakses Repositori
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                          <div class="panel-body">
+                                            Repositori adalah tempat dimana plugin disimpan secara online. Untuk memasang plugin EqDistant klik menu <kbd>Plugins</kbd> > <kbd>Manage and Installs Plugins ...</kbd>. Pada kotak dialog yang muncul, klik tab <kbd>All</kbd>. Kemudian carilah plugin EqDistant pada daftar plugin yang tampil.
+                                              <img src="../img/ins1.png" height="100%" width="600px" title="Fig 5. QGIS Plugins Dialog" class="img-thumbnail img-responsive center-block">
+                                              
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                          <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                              Step #3: Plugin Installation
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                          <div class="panel-body">
+                                            Jika plugin EqDistant telah terbaca pada daftar plugin, anda dapat mengklik tombol <kbd>Install Plugin</kbd> pada pojok kanan bawah kotak dialog untuk memasang plugin.
+                                              <img src="../img/ins3.png" height="100%" width="600px" title="Fig 7. Install Plugin" class="img-thumbnail img-responsive center-block">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end install -->
+
+                    <!-- Layer -->
+                    <div id="layer" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Ayo Kita Mulai!</p>
+                                    <p>Sebelum memulai, unduhlah data garis pangkal <a href="../ddl/sample_data.zip" class="label label-warning">berikut</a>. Anda juga dapat memuat data garis pangkal anda sendiri, dengan catatan data tersebut berupa layer garis dan telah terproyeksi dalam sistem koordinat yang memiliki satuan meter.</p>
+                                    <p>Setelah anda memiliki data garis pangkal, tambahkan kedua data tersebut ke dalam daftar layer QGIS. Pastikan kedua layer telah termuat sebelum membuka kotak dialog plugin, karena plugin akan otomatis memberikan pesan peringatan jika terdapat kurang dari dua layer garis yang termuat dalam QGIS. Jika kedua data garis pangkal telah anda dapatkan, maka tampilan yang anda dapatkan setelah mengklik ikon plugin adalah seperti gambar berikut.</p>
+                                    <img src="../img/pro5.png" height="100%" width="550px" title="Fig 12. EqDistant Plugin Dialog" class="img-thumbnail img-responsive center-block"><br/>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end layer -->
+
+                    <!-- result Type -->
+                    <div id="result" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Pilih Jenis Hasil Pemrosesan yang Anda Inginkan</p>
+                                    <img src="../img/res1.png" height="100%" width="250px" title="Opsi Hasil Tambahan" class="img-thumbnail img-responsive center-block"><br/>
+                                    <p>Tanpa mencentang opsi apapun pada bagian hasil tambahan, anda akan mendapatkan hasil berupa sebuah layer yang memuat garis ekuidistan. Jika anda mencentang salah satu atau kedua opsi seperti ditunjukkan pada gambar di atas, anda akan mendapat hasil tambahan berupa garis konstruksi penarikan garis ekuidistan maupun titik ekuidistan pembentuk garis ekuidistan. Gambar-gambar berikut menunjukkan ketiga jenis hasil yang akan anda dapatkan sesuai dengan opsi yang anda centang.</p>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="../img/res2.png" height="100%" width="250px" title="Fig 13. Garis Ekuidistan" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12"><img src="../img/res3.png" height="100%" width="250px" title="Fig 14. Garis Ekuidistan dengan Garis Konstruksi" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12"><img src="../img/res4.png" height="100%" width="250px" title="Fig 15. Garis Ekuidistan dengan Titik Ekuidistan" class="img-thumbnail img-responsive center-block"></div>
+                                    </div>
+                                    <p>Layer titik ekuidistan dapat anda gunakan untuk ekstraksi titik koordinat ekuidistan. Selain itu, layer garis konstruksi dapat anda gunakan untuk mengecek titik mana pada garis pangkal yang digunakan dalam pembuatan titik ekuidistan.</p>                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end result -->
+
+                    <!-- Point -->
+                    <div id="point" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Tentukan Titik Awal dan Akhir Garis Ekuidistan Anda</p>
+                                    <p>Pada tahap ini, kita akan memilih tipe garis ekuidistan sesuai dengan penjelasan pada bagian <a href="#home" class="label label-info">Awal</a> di atas. Jika garis pangkal anda berhadapan satu dengan yang lain, maka anda harus menggunakan fungsi pembentukan garis ekuidistan pada tab kasus daerah berseberangan (<kbd><i>Opposite State</i></kbd>). Jika garis pangkal anda berupa dua daerah yang bersisian,dimana terdapat titik perbatasan darat antara keduanya, maka anda harus menggunakan fungsi pada tab kasus daerah bersebelahan (<kbd><i>Adjacent State</i></kbd>). Untuk mengganti tab, anda cukup mengklik judul tab seperti yang ditunjukkan pada gambar berikut.</p>
+                                <img src="../img/pick1.png" height="100%" width="400px" title="Fig 16. Tab Option Between Case" class="img-thumbnail img-responsive center-block">
+                                    <br/>
+                                    <p>Jika anda perhatikan, opsi titik input ketika anda mengganti tab juga ikut berubah. Untuk kasus daerah berseberangan, anda harus menentukan empat titik input dengan masing-masing dua titik awal dan akhir penarikan. Pada kasus daerah bersebelahan, anda hanya perlu menentukan dua titik sebagai titik awal pada masing-masing garis pangkal. Titik akhir penarikan pada kasus ini akan didefinisikan pada pertemuan kedua garis pangkal. </p>
+                                    <div class="row">
+                                        <div class="col-md-6"><img src="../img/pick2.png" height="100%" width="350px" title="Fig 17. Opposite Case Tab" class="img-thumbnail img-responsive center-block"></div>
+                                        <div class="col-md-6"><img src="../img/pick3.png" height="100%" width="350px" title="Fig 18. Adjacent Case Tab" class="img-thumbnail img-responsive center-block"></div>
+                                    </div>
+                                    <br/>
+                                    <p>Penentuan titik input sangatlah mudah. Anda dapat melakukannya dengan mengklik tombol input pada kotak dialog, kemudian mengklik posisi titik tersebut pada garis pangkal. Nilai koordinat titik yang anda klik kemudian muncul pada baris informasi koordinat titik input yang menunjukkan bahwa proses penentuan titik input telah berhasil. Pastikan seluruh titik input telah terisi sebelum melanjutkan kelangkah berikutnya.</p>
+                                    <img src="../img/pick4.png" height="100%" width="200px" title="Fig 18. Coordinate Captured From Map Canvas" class="img-thumbnail img-responsive center-block">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end Point -->
+
+                    <!-- interval -->
+                    <div id="intv" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Langkah Terakhir!</p>
+                                    <p>Jarak interval merupakan besar jarak pencarian titik ekuidistan pada algoritma pembentukan. Semakin kecil nilai interval yang anda berikan, maka kemungkinan jarak antar titik ekuidistan yang anda peroleh semakin rapat. Waktu pemrosesan pun akan relatif semakin lama. Sebaliknya, jika nilai yang anda berikan semakin besar, maka kemungkinan titik ekuidistan yang anda peroleh semakin jauh satu dengan yang lain. Waktu pemrosesan pun akan relatif lebih cepat.</p>
+                                    <img src="../img/intv.png" height="100%" width="130px" title="Fig 18. Coordinate Captured From Map Canvas" class="img-thumbnail img-responsive center-block">
+                                    <br/>
+                                    <p>Pada kasus daerah bersebelahan, anda perlu menentukan jarak klaim. Jarak klaim dihitung dari titik pertemuan kedua garis pangkal dan merupakan jarak yang membatasi wilayah laut yang akan dibagi.</p>
+                                    <img src="../img/claim_dist.png" height="100%" width="210px" title="Fig 18. Coordinate Captured From Map Canvas" class="img-thumbnail img-responsive center-block">
+                                    <br/>
+                                    <p>Jika semua opsi di atas telah anda isi, Klik tombol proses untuk memulai pemrosesan plugin. Waktu pemrosesan akan bergantung pada panjang segmen dan jumlah titik yang terdapat pada garis pangkal anda serta jarak interval yang anda tentukan. Oleh karena itu, tunggu hingga pemrosesan plugin selesai sebelum melanjutkan ke tahap berikutnya :) . </p>
+                                    <img src="../img/process.png" height="100%" width="85px" title="Fig 18. Coordinate Captured From Map Canvas" class="img-thumbnail img-responsive center-block">                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end Interval -->
+
+                    <!-- Saving result -->
+                    <div id="save" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Menyimpan Hasil Anda</p>
+                                    <p>Hasil yang anda peroleh dari pemrosesan plugin secara default tersimpan pada memory layer. Hal ini berarti layer tersebut akan terhapus setelah anda menutup QGIS. Untuk mencegah hal tersebut, anda perlu menyimpan layer hasil yang anda peroleh secara manual. Penyimpanan ini dapat anda lakukan dengan mengklik kanan layer hasil yang ingin anda simpan, kemudian klik <kbd>Save As ...</kbd> .</p>
+                                    <img src="../img/save1.png" height="100%" width="400px" title="Fig 19. Saving Layer In QGIS" class="img-thumbnail img-responsive center-block">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end save -->
+
+                    <!-- Frequently Occured Problem -->
+                    <div id="feed" class="page-content inset">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="well">
+                                    <p class="lead">Selamat!</p>
+                                    <p>Garis ekuidistan kini telah anda peroleh, dan dapat anda gunakan untuk analisis maupun pertimbangan lainnya. Perlu diperhatikan bahwa hasil yang diperoleh sangat bergantung dengan geometri garis pangkal yang digunakan sebagai input, dan pada beberapa kasus garis yang diperoleh akan tampak tidak sempurna. Jika anda menemukan hal tersebut, cobalah merubah besar jarak interval ataupun membagi segmen garis pangkal menjadi segmen yang lebih kecil.</p>
+                                    <p>Untuk informasi maupun bantuan lebih lanjut, anda dapat mengirimkan email ke <u>ivanbusthomi@gmail.com</u>. Salam! </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <!--Placeholder for rightside-->
+            </div>
+            
+        </div>
+        
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <iframe width="100%" height="350" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="../js/jquery.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <!-- Script Modal 1 -->
+        <script>
+            $('#vid_1').click(function () {
+                var src = 'http://www.youtube.com/v/NgvcXIdLtGo&amp;autoplay=1';
+                $('#myModal').modal('show');
+                $('#myModal iframe').attr('src', src);
+            });
+            //remove video when modal is closed
+            $('#myModal button').click(function () {
+                $('#myModal iframe').removeAttr('src');
+            });
+            //remove video when modal is hidden
+            $('#myModal').on('hidden.bs.modal', function () {
+                $('#myModal iframe').removeAttr('src');
+            });
+        </script>
+        <!-- Script video 2 -->
+        <script>
+            $('#vid_2').click(function () {
+                var src = 'http://www.youtube.com/v/-uZsJjvrNSQ&amp;autoplay=1';
+                $('#myModal').modal('show');
+                $('#myModal iframe').attr('src', src);
+            });
+            //remove video when modal is closed
+            $('#myModal button').click(function () {
+                $('#myModal iframe').removeAttr('src');
+            });
+            //remove video when modal is hidden
+            $('#myModal').on('hidden.bs.modal', function () {
+                $('#myModal iframe').removeAttr('src');
+            });
+        </script>
+        <!-- Script video 3 -->
+        <script>
+            $('#vid_3').click(function () {
+                var src = 'http://www.youtube.com/v/klgwQHIwJGY&amp;autoplay=1';
+                $('#myModal').modal('show');
+                $('#myModal iframe').attr('src', src);
+            });
+            //remove video when modal is closed
+            $('#myModal button').click(function () {
+                $('#myModal iframe').removeAttr('src');
+            });
+            //remove video when modal is hidden
+            $('#myModal').on('hidden.bs.modal', function () {
+                $('#myModal iframe').removeAttr('src');
+            });
+        </script>
+    </body>
+</html>
