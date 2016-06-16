@@ -19,4 +19,24 @@
         <repository><![CDATA[https://github.com/ivanbusthomi/EqDistant]]></repository>
         <tags><![CDATA[line boundary,delimitiation,equidistance,UNCLOS]]></tags>
     </pyqgis_plugin>
+        <pyqgis_plugin name="CDF Converter" version="1.0.0" plugin_id="35162">
+        <description><![CDATA[This plugin convert NetCDF file to GeoTiff.]]></description>
+        <about></about>
+        <version>1.0.0</version>
+        <qgis_minimum_version>2.0</qgis_minimum_version>
+        <qgis_maximum_version>3.0</qgis_maximum_version>
+        <homepage><![CDATA[http://www.facebook.com/ivan.busthomi]]></homepage>
+        <file_name>CDFconverter.zip</file_name>
+        <icon>/static/packages/survey.png</icon>
+        <author_name><![CDATA[Ivan Busthomi]]></author_name>
+        <download_url>http://ivanbusthomi.github.io/repository/CDFconverter.zip</download_url>
+        <uploaded_by><![CDATA[ivanbusthomi]]></uploaded_by>
+        <create_date>2016-06-16T16:00:00</create_date>
+        <update_date>2016-06-16T16:00:00</update_date>
+        <experimental>True</experimental>
+        <deprecated>False</deprecated>
+        <repository><![CDATA[https://github.com/ivanbusthomi/cdf_converter]]></repository>
+        <tags><![CDATA[netcdf,tiff,convert,raster]]></tags>
+    </pyqgis_plugin>
+    
 </plugins>
