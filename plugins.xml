@@ -22,7 +22,7 @@
         <pyqgis_plugin name="CDF Converter" version="1.0.0" plugin_id="35162">
         <description><![CDATA[This plugin convert NetCDF file to GeoTiff.]]></description>
         <about></about>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <qgis_minimum_version>2.0</qgis_minimum_version>
         <qgis_maximum_version>3.0</qgis_maximum_version>
         <homepage><![CDATA[http://www.facebook.com/ivan.busthomi]]></homepage>
