@@ -29,10 +29,10 @@
         <file_name>CDFconverter.zip</file_name>
         <icon>/static/packages/survey.png</icon>
         <author_name><![CDATA[Ivan Busthomi]]></author_name>
-        <download_url>http://ivanbusthomi.github.io/repository/CDFconverter.zip</download_url>
+        <download_url>https://github.com/ivanbusthomi/cdf_converter/releases/download/v1.1.0/CDFconverter.zip</download_url>
         <uploaded_by><![CDATA[ivanbusthomi]]></uploaded_by>
         <create_date>2016-06-16T16:00:00</create_date>
-        <update_date>2016-06-16T16:00:00</update_date>
+        <update_date>2016-07-1T16:00:00</update_date>
         <experimental>True</experimental>
         <deprecated>False</deprecated>
         <repository><![CDATA[https://github.com/ivanbusthomi/cdf_converter]]></repository>
