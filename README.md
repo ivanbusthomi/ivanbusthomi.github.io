@@ -1,7 +1,3 @@
-ivanbusthomi.github.io
-======================
-<<<<<<< HEAD
-=======
+# Welcome to My Website
 
-web
->>>>>>> 48a61ccb633f189319194323d310e84e5a9a7145
+by Ivan Busthomi
