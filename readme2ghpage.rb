@@ -37,4 +37,4 @@ File.open readme_path, "r" do |readme|
 end
 
 # remove the readme
-`git reset HEAD README.md; rm README.md`
+#`git reset HEAD README.md; rm README.md`
