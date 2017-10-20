@@ -41,5 +41,6 @@
 * go to intended state using
 `git reset --hard <sha-1_code>`
 
-### See commit history beautifully
+
+## Seeing commit log beautifully
 `git log --pretty=oneline`
