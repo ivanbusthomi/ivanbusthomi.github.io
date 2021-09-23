@@ -39,4 +39,24 @@
         <tags><![CDATA[netcdf,tiff,convert,raster]]></tags>
     </pyqgis_plugin>
     
+    <pyqgis_plugin name="GeoKKP-GIS" version="1.0.0" plugin_id="35164">
+        <description><![CDATA[GeoKKP-GIS plugin for QGIS.]]></description>
+        <about></about>
+        <version>1.0.0</version>
+        <qgis_minimum_version>3.20</qgis_minimum_version>
+        <qgis_maximum_version>5.0</qgis_maximum_version>
+        <homepage><![CDATA[https://github.com/danylaksono/GeoKKP-GIS]]></homepage>
+        <file_name>GeoKKP-GIS.zip</file_name>
+        <icon>/static/packages/survey.png</icon>
+        <author_name><![CDATA[Dany Laksono]]></author_name>
+        <download_url>http://ivanbusthomi.github.io/repository/GeoKKP-GIS.zip</download_url>
+        <uploaded_by><![CDATA[ivanbusthomi]]></uploaded_by>
+        <create_date>2021-08-23T16:00:00</create_date>
+        <update_date>2021-09-23T15:00:00</update_date>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <repository><![CDATA[https://github.com/danylaksono/GeoKKP-GIS]]></repository>
+        <tags><![CDATA[gis, parcel, geokkp]]></tags>
+    </pyqgis_plugin>
+    
 </plugins>
