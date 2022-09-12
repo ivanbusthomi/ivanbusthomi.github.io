@@ -39,24 +39,25 @@
         <tags><![CDATA[netcdf,tiff,convert,raster]]></tags>
     </pyqgis_plugin>
     
-    <pyqgis_plugin name="GeoKKP-GIS" version="1.0.0" plugin_id="35164">
-        <description><![CDATA[GeoKKP-GIS plugin for QGIS.]]></description>
-        <about></about>
-        <version>1.0.0</version>
+    <pyqgis_plugin name="EqDistant" version="3.0.0" plugin_id="35164">
+        <description><![CDATA[Creates median line using Equidistant line principle.]]></description>
+        <about>Creates median line between two coast line features using Equidistant line principle. The result contains median line from the algorithm as well as the construction line and turning point for each point in the median line. This plugin is usefull in maritime boundary delineation and delimitiation
+</about>
+        <version>3.0</version>
         <qgis_minimum_version>3.20</qgis_minimum_version>
         <qgis_maximum_version>5.0</qgis_maximum_version>
-        <homepage><![CDATA[https://github.com/danylaksono/GeoKKP-GIS]]></homepage>
-        <file_name>GeoKKP-GIS.zip</file_name>
+        <homepage><![CDATA[http://ivanbusthomi.github.io/plugins/eqdistant/]]></homepage>
+        <file_name>EqDistant-v3.0.zip</file_name>
         <icon>/static/packages/survey.png</icon>
-        <author_name><![CDATA[Dany Laksono]]></author_name>
-        <download_url>http://ivanbusthomi.github.io/repository/GeoKKP-GIS.zip</download_url>
+        <author_name><![CDATA[Ivan Busthomi]]></author_name>
+        <download_url>http://ivanbusthomi.github.io/repository/EqDistant-v3.0.zip</download_url>
         <uploaded_by><![CDATA[ivanbusthomi]]></uploaded_by>
-        <create_date>2021-08-23T16:00:00</create_date>
-        <update_date>2021-09-23T15:00:00</update_date>
+        <create_date>2014-06-18T09:43:57</create_date>
+        <update_date>2022-09-12T15:00:00</update_date>
         <experimental>False</experimental>
         <deprecated>False</deprecated>
-        <repository><![CDATA[https://github.com/danylaksono/GeoKKP-GIS]]></repository>
-        <tags><![CDATA[gis, parcel, geokkp]]></tags>
+        <repository><![CDATA[https://github.com/ivanbusthomi/EqDistant]]></repository>
+        <tags><![CDATA[python, equidistant, median line, maritime, boundary, UNCLOS, TALOS]]></tags>
     </pyqgis_plugin>
     
 </plugins>
